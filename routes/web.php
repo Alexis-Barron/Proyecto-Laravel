@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\PostController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Fragment\RoutableFragmentRenderer;
@@ -9,4 +10,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('Post', PostController::class);
+
+
+Route::group(['prefix' => 'dashboard'],function() {
+    Route::resource('post', PostController::class);
+    Route::resource('category', CategoryController::class);
+});

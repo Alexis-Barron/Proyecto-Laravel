@@ -1,4 +1,4 @@
-@extends('marter')
+@extends('master')
 
 @section('content')
 <h1>contact1</h1>
