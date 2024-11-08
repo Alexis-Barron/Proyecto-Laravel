@@ -8,6 +8,15 @@
 </head>
 <body>
 
+    @session('key')
+    <h1>{{ $value }}</h1>
+    @endsession
+
+
+    @if (@session('status'))
+        {{ session ('status') }}
+    @endif
+
     @yield('content')
 
     <section>
