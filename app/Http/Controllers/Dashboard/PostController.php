@@ -14,7 +14,7 @@ class PostController extends Controller
     public function index()
     {
         session()->flush();
-        //session(['key' => 'value']);
+    
         $posts = Post::paginate(3);
         return view('dashboard.post.index', compact('posts'));
     }
@@ -59,6 +59,7 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
+    
         $post->delete();
         return to_route('post.index')->with('status', 'Post deleted');
     }

@@ -27,20 +27,10 @@
                 </header>
             @endisset
 
-        <!-- Page Content -->
-<main>
-    <div class="container mx-auto mt-4">
-        @if (session('status'))
-            <div class="alert alert-success p-4 rounded-lg mb-4 shadow-md">
-                <strong class="font-semibold text-green-700">Success!</strong> 
-                <span class="text-green-600">{{ session('status') }}</span>
-            </div>
-        @endif
-    </div>
-    
-    @yield('content')
-</main>
-
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
         </div>
     </body>
 </html>
